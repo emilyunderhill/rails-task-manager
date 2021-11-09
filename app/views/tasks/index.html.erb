@@ -2,12 +2,16 @@
 
 <% @tasks.each do |task| %>
   <h2><%= link_to task.title, task_path(task.id) %></h2>
-  <%= form_for task do |f| %>
-  Completed? <%= f.check_box :completed %>
+  <% if task.completed == true %>
+    <i class="far fa-check-circle"></i>
+  <% else %>
+    <i class="far fa-circle"></i>
   <% end %>
-
   <%# <input type="checkbox" class="completed" name="completed" <%= 'checked' if task.completed  %>
   <%# <label for="completed">Completed?</label> %>
+  <%= link_to task_path(task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
 <% end %>
 
 <%= link_to "Add a new task", new_task_path %>
