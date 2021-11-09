@@ -4,19 +4,19 @@ class TasksController < ApplicationController
   end
 
   def show
-    Task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def new
-    Task.new
+    @task = Task.new
   end
 
   def create
-    Task.create(task_params)
+    @task = Task.create(task_params)
   end
 
   def edit
-    Task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def update
