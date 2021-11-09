@@ -2,6 +2,12 @@
 
 <% @tasks.each do |task| %>
   <h2><%= link_to task.title, task_path(task.id) %></h2>
-  <input type="checkbox" class="completed" name="completed" <%= 'checked' if task.completed  %>>
-  <label for="completed">Completed?</label>
+  <%= form_for task do |f| %>
+  Completed? <%= f.check_box :completed %>
+  <% end %>
+
+  <%# <input type="checkbox" class="completed" name="completed" <%= 'checked' if task.completed  %>
+  <%# <label for="completed">Completed?</label> %>
 <% end %>
+
+<%= link_to "Add a new task", new_task_path %>

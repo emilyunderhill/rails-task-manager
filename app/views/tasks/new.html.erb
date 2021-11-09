@@ -1,0 +1,7 @@
+<%= form_for @task do |f| %>
+  Title: <%= f.text_field :title %>
+  Details: <%= f.text_field :details %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back to list", tasks_path %>

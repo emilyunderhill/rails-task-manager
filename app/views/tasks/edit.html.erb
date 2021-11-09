@@ -1,0 +1,8 @@
+<%= form_for @task do |f| %>
+  Title: <%= f.text_field :title %>
+  Details: <%= f.text_field :details %>
+  Completed? <%= f.check_box :completed %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'back', task_path(@task.id) %>
