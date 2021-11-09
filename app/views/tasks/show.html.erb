@@ -2,3 +2,4 @@
 <p><%= @task.details %> </p>
 <input type="checkbox" class="completed" name="completed" <%= 'checked' if @task.completed  %>>
 <label for="completed">Completed?</label>
+<%= link_to "Back", tasks_path %>
